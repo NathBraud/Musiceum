@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  best_track: MyText
+  size: 1
+  from_year: 1
+  to_year: 1
+  number_of_shows: 1
+  kind: MyString
+  instruments: MyString
+  image: MyText
+
+two:
+  name: MyString
+  best_track: MyText
+  size: 1
+  from_year: 1
+  to_year: 1
+  number_of_shows: 1
+  kind: MyString
+  instruments: MyString
+  image: MyText

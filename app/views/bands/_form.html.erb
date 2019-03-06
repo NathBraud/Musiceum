@@ -1,0 +1,62 @@
+<%= form_with(model: band, local: true) do |form| %>
+  <% if band.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(band.errors.count, "error") %> prohibited this band from being saved:</h2>
+
+      <ul>
+      <% band.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :best_track %>
+    <%= form.text_area :best_track %>
+  </div>
+
+  <div class="field">
+    <%= form.label :size %>
+    <%= form.number_field :size %>
+  </div>
+
+  <div class="field">
+    <%= form.label :from_year %>
+    <%= form.number_field :from_year %>
+  </div>
+
+  <div class="field">
+    <%= form.label :to_year %>
+    <%= form.number_field :to_year %>
+  </div>
+
+  <div class="field">
+    <%= form.label :number_of_shows %>
+    <%= form.number_field :number_of_shows %>
+  </div>
+
+  <div class="field">
+    <%= form.label :kind %>
+    <%= form.text_field :kind %>
+  </div>
+
+  <div class="field">
+    <%= form.label :instruments %>
+    <%= form.text_field :instruments %>
+  </div>
+
+  <div class="field">
+    <%= form.label :image %>
+    <%= form.text_area :image %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

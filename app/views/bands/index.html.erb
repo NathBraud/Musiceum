@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Bands</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Best track</th>
+      <th>Size</th>
+      <th>From year</th>
+      <th>To year</th>
+      <th>Number of shows</th>
+      <th>Kind</th>
+      <th>Instruments</th>
+      <th>Image</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @bands.each do |band| %>
+      <tr>
+        <td><%= band.name %></td>
+        <td><%= band.best_track %></td>
+        <td><%= band.size %></td>
+        <td><%= band.from_year %></td>
+        <td><%= band.to_year %></td>
+        <td><%= band.number_of_shows %></td>
+        <td><%= band.kind %></td>
+        <td><%= band.instruments %></td>
+        <td><%= band.image %></td>
+        <td><%= link_to 'Show', band %></td>
+        <td><%= link_to 'Edit', edit_band_path(band) %></td>
+        <td><%= link_to 'Destroy', band, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Band', new_band_path %>

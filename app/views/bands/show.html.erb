@@ -1,0 +1,51 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @band.name %>
+</p>
+
+<p>
+  <strong>Best track:</strong>
+  <%= @band.best_track %>
+</p>
+
+<p>
+  <strong>Size:</strong>
+  <%= @band.size %>
+</p>
+
+<p>
+  <strong>From year:</strong>
+  <%= @band.from_year %>
+</p>
+
+<p>
+  <strong>To year:</strong>
+  <%= @band.to_year %>
+</p>
+
+<p>
+  <strong>Number of shows:</strong>
+  <%= @band.number_of_shows %>
+</p>
+
+<p>
+  <strong>Kind:</strong>
+  <%= @band.kind %>
+</p>
+
+<p>
+  <strong>Instruments:</strong>
+  <%= @band.instruments %>
+</p>
+<p>
+<strong>Image:</strong>
+</p>
+<div class=container>
+
+  <%= image_tag @band.image, class: "img-fluid" %>
+</div>
+
+<%= link_to 'Edit', edit_band_path(@band) %> |
+<%= link_to 'Back', bands_path %>
