@@ -5,12 +5,64 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+    <%= favicon_link_tag asset_path('favicon_musiceum.svg'), :rel => 'icon', :type =>  'images/svgg' %>
   </head>
 
   <body>
-    <%= yield %>
-  </body>
+      <header>
+      <!-- Fixed navbar -->
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <a class="navbar-brand font-weight-bold" href="/">MUSICEUM</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarCollapse-1" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse scrollspy" id="navbarCollapse-1">
+          <ul class="navbar-nav mr-lg-auto">
+            <li class="nav-item active">
+              <a class="nav-link smooth-scroll" href="/">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link smooth-scroll" href="/bands">Bands</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link smooth-scroll" href="/about">About Us</a>
+            </li>
+          </ul>
+
+          <!--
+          <form class="form-inline mt-2 mt-md-0">
+            <input class="form-control mr-sm-2" type="text" placeholder="Trouver un groupe" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Rechercher</button>
+          </form>
+        </div>
+
+
+        Ancienne Barre de Recherche, prendre si nécessaire et bug.
+          -->
+
+          
+          <div class="span3 widget-span widget-type-raw_html custom-search" style="" data-widget-type="raw_html" data-x="4" data-w="3">
+  <div class="cell-wrapper layout-widget-wrapper">
+    <span id="hs_cos_wrapper_module_14308928327274411" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_raw_html" style="" data-hs-cos-general-type="widget" data-hs-cos-type="raw_html">
+      <form method="GET" action="https://musiceum.herokuapp.com/Search?" role="search" class="navbar-form navbar-left ng-pristine ng-valid" id="express-form" novalidate="">
+        <input required="" name="q" placeholder="Search for a band..." class="form-control tt-input" id="express-form-typeahead" autocomplete="off" spellcheck="false" dir="auto" type="text">
+        <button class="search-btn" type="submit"><span class="icon"></span></button>
+      </form>
+    </span>
+  </div>
+  
+  </div>
+  </div>
+
+      </nav>
+      </header>
+    
+
+<div class="container" style="margin-top: 70px;"><%= yield %></div>
+
+</body>
 </html>

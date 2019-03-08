@@ -1,43 +1,85 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Bands</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Best track</th>
-      <th>Size</th>
-      <th>From year</th>
-      <th>To year</th>
-      <th>Number of shows</th>
-      <th>Kind</th>
-      <th>Instruments</th>
-      <th>Image</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<div class="row" ">
+  <% @bands.each do |band| %>
+    <div class="col-md-4 band" data-animation-effect="fadeInUpSmall" data-effect-delay="100">
+      <div class="band-inner">
+        <%= image_tag band.image, class: 'img-fluid' %>
+        <h2 class="mt-5 d-flex justify-content-center"><strong><%= band.name %></strong></h2>
+        <%= link_to band do %>
+          <h6 class="mt-5 d-flex justify-content-end"> Show more...</h6>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>
 
-  <tbody>
-    <% @bands.each do |band| %>
-      <tr>
-        <td><%= band.name %></td>
-        <td><%= band.best_track %></td>
-        <td><%= band.size %></td>
-        <td><%= band.from_year %></td>
-        <td><%= band.to_year %></td>
-        <td><%= band.number_of_shows %></td>
-        <td><%= band.kind %></td>
-        <td><%= band.instruments %></td>
-        <td><%= band.image %></td>
-        <td><%= link_to 'Show', band %></td>
-        <td><%= link_to 'Edit', edit_band_path(band) %></td>
-        <td><%= link_to 'Destroy', band, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
 
+
+<!--
+<section id="about" class="light-gray-bg pv-20">
+<div class="container">
+<div class="timeline margin-clear clearfix">
+
+    
+    
+    <div class="timeline-item ">
+      <div class="white-bg shadow p-20 text-center object-non-visible" data-animation-effect="fadeInUpSmall" data-effect-delay="100">
+        <div class="timeline-date-label margin-clear clearfix">2018 - Maintenant</div>
+        <h3 class="mt-4">DUT MMI - Bordeaux</h3>
+        <div class="separator"></div>
+        <p><p></p><ul><li><b>Graphisme</b><br/></li><li>Programmation<br/></li><li><b>Audiovisuel</b><br/></li><li>Gestion de projets<br/></li><li><b>Communication &amp; Marketing</b></li></ul><p></p></p>
+      </div>
+    </div>
+    
+    
+    <div class="timeline-item pull-right">
+      <div class="white-bg shadow p-20 text-center object-non-visible" data-animation-effect="fadeInUpSmall" data-effect-delay="100">
+        <div class="timeline-date-label margin-clear clearfix">8 Mars 2018</div>
+        <h3 class="mt-4">Site Web terminé</h3>
+        <div class="separator"></div>
+        <p><p>1 MONTH PROJECT : Créer d'une maquette de site web en 1 mois chrono.</p></p>
+      </div>
+    </div>
+    
+    
+    <div class="timeline-item ">
+      <div class="white-bg shadow p-20 text-center object-non-visible" data-animation-effect="fadeInUpSmall" data-effect-delay="100">
+        <div class="timeline-date-label margin-clear clearfix">2017-2018</div>
+        <h3 class="mt-4">Période de &quot;réflexion&quot;</h3>
+        <div class="separator"></div>
+        <p><p>Le but de cette année est de faire un maximum de choses qui m'aideront pour la suite de mes études.</p><p>- Stage de programmation de Février à début Mars.</p><p>- Expérience professionnelle dans le montage vidéo.</p><p>- Réalisation de Courts Métrages.</p><p><br/></p></p>
+      </div>
+    </div>
+    
+   
+    <div class="timeline-item pull-right">
+      <div class="white-bg shadow p-20 text-center object-non-visible" data-animation-effect="fadeInUpSmall" data-effect-delay="100">
+        <div class="timeline-date-label margin-clear clearfix">2016-2017</div>
+        <h3 class="mt-4">Lycée Grandmont (Tours)</h3>
+        <div class="separator"></div>
+        <p><p>Passage du Baccalauréat Scientifique (S-Sciences de l'Ingénieur) : <b>Obtenu</b>.</p></p>
+      </div>
+    </div>
+    
+    
+    <div class="timeline-item ">
+      <div class="white-bg shadow p-20 text-center object-non-visible" data-animation-effect="fadeInUpSmall" data-effect-delay="100">
+        <div class="timeline-date-label margin-clear clearfix">Mai 2016</div>
+        <h3 class="mt-4">Chaîne Youtube</h3>
+        <div class="separator"></div>
+        <p><p>Date de publication de ma première vidéo sur Youtube: "<i>LES SERIES</i>"</p></p>
+      </div>
+    </div>
+    
+    
+
+  </div>
+</div>
+</section>
 <br>
+
+-->
 
 <%= link_to 'New Band', new_band_path %>

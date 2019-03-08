@@ -1,5 +1,6 @@
 <p id="notice"><%= notice %></p>
 
+<div class="show_html">
 <p>
   <strong>Name:</strong>
   <%= @band.name %>
@@ -42,6 +43,9 @@
 <p>
 <strong>Image:</strong>
 </p>
+
+</div>
+
 <div class=container>
 
   <%= image_tag @band.image, class: "img-fluid" %>
@@ -49,3 +53,5 @@
 
 <%= link_to 'Edit', edit_band_path(@band) %> |
 <%= link_to 'Back', bands_path %>
+<%= link_to 'Destroy', @band, method: :delete, data: { confirm: 'Are you sure?' } %>
+
